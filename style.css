@@ -530,7 +530,11 @@ header { margin: calc(2 * var(--gap)) var(--gap) }
 #home_contact { background: var(--color-darkblue) }
 
 #home_contact h2,
+#home_contact a,
+#home_contact strong,
 #home_contact p { color: var(--color-white) }
+
+#home_contact a { text-decoration: underline }
 
 #home_contact fieldset {
 	position: relative;
@@ -551,19 +555,79 @@ header { margin: calc(2 * var(--gap)) var(--gap) }
 	font-weight: 500;
 	color: var(--color-white);
 	background: var(--color-darkblue);
+	transition: background var(--animtime) var(--easing), color var(--animtime) var(--easing);
+}
+
+#home_contact textarea { resize: vertical }
+
+#home_contact input:focus,
+#home_contact textarea:focus {
+	color: var(--color-black);
+	background: var(--color-white);
 }
 
 #home_contact label {
-	position: absolute;
-	margin: auto;
-	top: 0;
-	bottom: 0;
-	left: 1em;
 	font-weight: 400;
 	font-variant-caps: all-small-caps;
 	font-size: 1em;
 	letter-spacing: .1em;
 	color: var(--color-white);
 	opacity: .5;
-	transition: opacity var(--animtime) var(--easing);
+}
+
+#home_contact button {
+	margin: 2em var(--gap) 0;
+	padding: .75em 1.5em;
+	width: unset;
+	font-size: 1.25em;
+}
+
+#home_contact button:not(:hover):not(:active) {
+	background-color: var(--color-champagne);
+}
+
+#contact_map { margin: 4em var(--gap) 2em }
+
+/* Footer */
+
+footer {
+	padding: 2em 0;
+	color: var(--color-white);
+	background: var(--color-black);
+}
+
+footer svg {
+	display: block;
+	margin: 0 auto 2em;
+	max-width: 200px;
+	fill: var(--color-white);
+}
+
+footer p {
+	margin: 0 var(--gap);
+	text-align: center;
+}
+
+footer li {
+	text-align: center;
+	line-height: 1.5;
+}
+
+footer h3 {
+	display: block;
+	margin-top: 2em;
+	text-align: center;
+	font-family: var(--font-sans);
+	font-weight: 600;
+	font-variant-caps: all-small-caps;
+	font-size: 1em;
+	letter-spacing: .1em;
+	color: var(--color-champagne);
+}
+
+footer a:hover,
+footer a:active {
+	color: var(--color-white);
+	text-decoration: underline;
+	text-decoration-color: var(--color-champagne);
 }
