@@ -29,7 +29,7 @@
 		<nav id="menu">
 			<input type="checkbox" id="menu_dropdown"/>
 			<label id="menu_dropdown_button" for="menu_dropdown"><span>Menu</span></label>
-			<ul class="menu_links">
+			<ul id="menu_links">
 				<li>
 					<a href="index.html">Home</a>
 				</li>
@@ -61,7 +61,6 @@
 		<!-- Hero -->
 		<section id="home_hero">
 			<h1><strong><em>Handcrafted</em> Fine Cabinetry</strong> in Northwest Arkansas.</h1>
-			<hr class="rule_bold"/>
 			<p>We specialize in planning, designing constructing and installing custom cabinets, built-ins, and much more.</p>
 			<div id="hero_ctas">
 				<a class="cta" href="#home_contact" id="hero_cta_consultation">Get your free consultation</a>
@@ -78,10 +77,9 @@
 		</section>
 
 		<!-- Products -->
-		<section class="home_section" id="home_services">
+		<section class="home_section section_type_1" id="home_services">
 			<h2>What we offer to you</h2>
 			<p>Completely custom products made for you by artisan craftsman in the foothills of Arkansas.</p>
-			<hr class="rule_bold"/>
 			
 			<div id="home_services_cards">
 				<div class="home_service_card">
@@ -89,7 +87,6 @@
 					</div>
 					<div class="home_service_info">
 						<h3>Interior Design</h3>
-						<hr class="rule_thin"/>
 						<p>We specialize in planning, designing, constructing and installing custom cabinets, built-ins, and much more.</p>
 					</div>
 				</div>
@@ -98,7 +95,6 @@
 					</div>
 					<div class="home_service_info">
 						<h3>Kitchens</h3>
-						<hr class="rule_thin"/>
 						<p>We specialize in planning, designing, constructing and installing custom cabinets, built-ins, and much more.</p>
 					</div>
 				</div>
@@ -107,7 +103,6 @@
 					</div>
 					<div class="home_service_info">
 						<h3>Bathrooms</h3>
-						<hr class="rule_thin"/>
 						<p>We specialize in planning, designing, constructing and installing custom cabinets, built-ins, and much more.</p>
 					</div>
 				</div>
@@ -115,25 +110,21 @@
 		</section>
 
 		<!-- Testimonials -->
-		<section class="home_section" id="home_testimonials">
+		<section class="home_section section_type_1" id="home_testimonials">
 			<h2>Don't take our word for it.</h2>
 			<p>This is what our customers have to say about our work.</p>
-			<hr class="rule_bold"/>
 			
 			<div id="home_testimonials_cards">
 				<div class="home_testimonial_card">
 					<p>We loved everything about our cabinets! The guys at Woodhaven were wonderful to work with! They were professional, made exactly what I wanted and delivered it exactly when they said they would! They even made a custom range hood that I am sure was a beast. It is even better than I pictured!</p>
-					<hr class="rule_thin"/>
 					<h3>Ashlee W.</h3>
 				</div>
 				<div class="home_testimonial_card">
 					<p>Wow doesn’t even begin to explain the talent with carpentry or the amazing customer service! They were so patient with me and really helped bring my vision to life! Can't recommend enough!</p>
-					<hr class="rule_thin"/>
 					<h3>Michael H.</h3>
 				</div>
 				<div class="home_testimonial_card">
 					<p>We’re doing a complete remodel of our home and I knew I only had one shot at getting exactly what I’ve always wanted. Thanks so much to Woodhaven custom cabinets for giving me exactly what I have been dreaming of. My experience with Woodhaven custom cabinets was PHENOMENAL.</p>
-					<hr class="rule_thin"/>
 					<h3>Brad B.</h3>
 				</div>
 			</div>
@@ -141,9 +132,8 @@
 		</section>
 
 		<!-- Projects -->
-		<section class="home_section" id="home_projects">
+		<section class="home_section section_type_2" id="home_projects">
 			<h2>Our most fine work.</h2>
-			<hr class="rule_thin"/>
 			<p>Some of the unique projects we have done for our clients.</p>
 			
 			<ul id="home_projects_gallery">
@@ -175,45 +165,46 @@
 		</section>
 
 		<!-- Contact -->
-		<section class="home_section" id="home_contact">
+		<section class="home_section section_type_1" id="home_contact">
 			<h2>We look forward to hearing from you!</h2>
 			<p>Contact us for your free consultation.</p>
-			<hr class="rule_bold"/>
 
 			<form>
 				<!-- First name -->
 				<fieldset>
-					<label for="home_contact_firstname">First name:</label>
-					<input id="home_contact_firstname" type="text"/>
+					<label for="contact_firstname">First name:</label>
+					<input id="contact_firstname" type="text"/>
 				</fieldset>
 				<!-- Last name -->
 				<fieldset>
-					<label for="home_contact_lastname">Last name:</label>
-					<input id="home_contact_lastname" type="text"/>
+					<label for="contact_lastname">Last name:</label>
+					<input id="contact_lastname" type="text"/>
 				</fieldset>
 				<!-- Email address -->
 				<fieldset>
-					<label for="home_contact_email">Email address:</label>
-					<input id="home_contact_email" type="email"/>
+					<label for="contact_email">Email address:</label>
+					<input id="contact_email" type="email"/>
 				</fieldset>
 				<!-- Phone number -->
 				<fieldset>
-					<label for="home_contact_phone">Phone number:</label>
-					<input id="home_contact_phone" type="phone"/>
+					<label for="contact_phone">Phone number:</label>
+					<input id="contact_phone" type="phone"/>
 				</fieldset>
 				<!-- Message -->
 				<fieldset>
-					<label for="home_contact_text">Your message:</label>
-					<textarea id="home_contact_phone"></textarea>
+					<label for="contact_text">Your message:</label>
+					<textarea id="contact_phone"></textarea>
 				</fieldset>
-				<button type="submit" id="home_contact_send" class="cta">Send your message</button>
+				<button type="submit" id="contact_send" class="cta">Send your message</button>
 			</form>
 
-			<svg id="contact_map" viewBox="0 0 100 93.143" preserveAspectRatio="xMidYMin meet">
-				<use xlink:href="logos.svg#map"></use>
-			</svg>
-			<p>Find us at <strong>803 W Trimble Ave, Berryville, AR</strong></p>
-			<p>Or call us at <strong><a href="tel:4792311755">479-231-1755</a></strong></p>
+			<div class="contact_info">
+				<svg id="contact_map" viewBox="0 0 100 93.143" preserveAspectRatio="xMidYMin meet">
+					<use xlink:href="logos.svg#map"></use>
+				</svg>
+				<p>Find us at <strong>803 W Trimble Ave, Berryville, AR</strong></p>
+				<p>Or call us at <strong><a href="tel:4792311755">479-231-1755</a></strong></p>
+			</div>
 		</section>
 
 		<!-- Footer -->
