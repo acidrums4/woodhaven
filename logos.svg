@@ -52,9 +52,9 @@
 	</symbol>
 
 	<view id="logo-view"  viewBox="0 0 100 16.447"/>
-	<view id="w-view"  viewBox="0 0 16.43 11.79"/>
-	<view id="map" viewBox="0 0 100 93.143"/>
+	<view id="w-view"  viewBox="100 0 16.43 11.79"/>
+	<view id="map-view" viewBox="116.43 0 100 93.143"/>
 	<use xlink:href="#logo" x="0" y="0" width="100" height="16.447"/>
 	<use xlink:href="#w" x="100" y="0" width="16.43" height="11.79"/>
-	<use xlink:href="#map-view" x="116.43" y="0" width="100" height="93.143"/>
+	<use xlink:href="#map" x="116.43" y="0" width="100" height="93.143"/>
 </svg>
