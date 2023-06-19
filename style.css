@@ -239,6 +239,7 @@ section h2 {
 .section_type_2>p:first-of-type,
 .section_type_4>p:first-of-type { font-size: 1.25em }
 
+.section_type_gallery,
 .section_type_0,
 .section_type_3,
 .section_type_4,
@@ -247,6 +248,7 @@ section h2 {
 	background-color: var(--color-lightchampagne);
 }
 
+.section_type_0+section::before,
 .section_type_3+.section_type_3::before,
 .section_type_3+.section_type_4::before,
 .section_type_4+.section_type_3::before {
@@ -294,7 +296,8 @@ section h2 {
 		margin-top: calc(0px - 2 * var(--gap));
 	}
 
-	section:nth-of-type(n+2) { padding: 6em 0 }
+	section:nth-of-type(n+2),
+	.section_type_gallery { padding: 6em 0 }
 	section h2 { font-size: 2.5em }
 
 	.section_type_0 { padding: 0 0 6em }
@@ -315,7 +318,8 @@ section h2 {
 		padding-bottom: 8em;
 	}
 
-	section:nth-of-type(n+2) { padding: 8em 0 }
+	section:nth-of-type(n+2),
+	.section_type_gallery { padding: 8em 0 }
 	
 	.section_type_1>p:first-of-type::after,
 	.section_type_4>p:first-of-type::after {
@@ -342,13 +346,13 @@ section h2 {
 	.section_type_3:nth-of-type(even)>p,
 	.section_type_5:nth-of-type(odd)>h2:first-of-type,
 	.section_type_5:nth-of-type(odd)>p,
-	.section_type_5:nth-of-type(even)>.gallery_images { margin-right: 0 }
+	.section_type_5:nth-of-type(even)>.gallery_items { margin-right: 0 }
 	
 	.section_type_3:nth-of-type(even)>h2:first-of-type,
 	.section_type_3:nth-of-type(odd)>p,
 	.section_type_5:nth-of-type(even)>h2:first-of-type,
 	.section_type_5:nth-of-type(even)>p,
-	.section_type_5:nth-of-type(odd)>.gallery_images { margin-left: 0 }
+	.section_type_5:nth-of-type(odd)>.gallery_items { margin-left: 0 }
 
 	.section_type_0>img,
 	.section_type_3:nth-of-type(odd)>h2:first-of-type,
@@ -360,11 +364,11 @@ section h2 {
 	.section_type_0>p,
 	.section_type_3:nth-of-type(odd)>p,
 	.section_type_3:nth-of-type(odd)>img,
-	.section_type_5:nth-of-type(odd)>.gallery_images { grid-column: 2/span 2 }
+	.section_type_5:nth-of-type(odd)>.gallery_items { grid-column: 2/span 2 }
 
 	.section_type_3:nth-of-type(even)>p,
 	.section_type_3:nth-of-type(even)>img,
-	.section_type_5:nth-of-type(even)>.gallery_images { grid-column: 1/span 2 }
+	.section_type_5:nth-of-type(even)>.gallery_items { grid-column: 1/span 2 }
 
 	.section_type_3>h2:first-of-type::after,
 	.section_type_5>h2:first-of-type::after {
@@ -500,6 +504,45 @@ section h2 {
 
 .card_info p { margin: 0 var(--gap) }
 
+.card_mini_meta {
+	padding: 2em var(--gap);
+	border-bottom: 1px solid var(--color-champagne);
+	background: var(--color-white);
+}
+
+.card_mini_meta h3 a,
+.card_mini_meta span a {
+	line-height: 1;
+	text-decoration: none;
+}
+
+.card_mini_meta h3 a:hover,
+.card_mini_meta span a:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--color-blue);
+}
+
+.card_mini_meta h3 {
+	margin-top: .5em;
+	margin-bottom: 0;
+	line-height: 1;
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.card_mini_meta .cta {
+	display: inline-block;
+	margin-top: 1em;
+	background-color: var(--color-champagne);
+}
+
+.card_mini_meta .cta:focus,
+.card_mini_meta .cta:active { color: var(--color-white) }
+
+.card_mini_meta .cta:hover { background-color: var(--color-blue) }
+.card_mini_meta .cta:focus { background-color: var(--color-darkblue) }
+.card_mini_meta .cta:active { background-color: var(--color-black) }
+
 @media (min-width: 50rem)
 {
 	.card {
@@ -530,6 +573,7 @@ section h2 {
 {
 	.card_info { padding: 3em 0 }
 	.card_info p { font-size: 1.25em }
+	.card_mini_meta { padding: 2em calc(var(--gap) / 2) }
 }
 
 @media (min-width: 120rem)
@@ -540,12 +584,14 @@ section h2 {
 
 /* Global: Galleries of stuff */
 
-.gallery_images {
+.gallery_items {
 	display: block;
 	margin-top: 2em;
 }
 
-.gallery_images li+li{ margin-top: var(--gap) }
+.gallery_items li+li{ margin-top: var(--gap) }
+
+.gallery_item { break-inside: avoid }
 
 .gallery_item a {
 	display: block;
@@ -559,14 +605,16 @@ section h2 {
 
 @media (min-width: 30rem)
 {
-	.gallery_images {
+	.section_type_gallery .gallery_items { column-count: 1 }
+
+	.gallery_items {
 		column-count: 2;
 		column-gap: var(--gap);
 	}
 
 	@supports (grid-template-rows: masonry)
 	{
-		.gallery_images {
+		.gallery_items {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-columns: masonry;
@@ -577,25 +625,35 @@ section h2 {
 
 @media (min-width: 50rem)
 {
-	.gallery_images { margin: 2em var(--gap) 0 }
+	.gallery_items { margin: 2em var(--gap) 0 }
+}
+
+@media (min-width: 60rem)
+{
+	.section_type_gallery .gallery_items { column-count: 2 }
 }
 
 @media (min-width: 80rem)
 {
-	.gallery_images { grid-column: 2/3 }
+	.gallery_items { grid-column: 2/3 }
 
-	.gallery_images {
+	.gallery_items {
 		grid-row: 1/span 9999;
 		margin-top: 0;
 		column-gap: calc(var(--gap) / 2);
 	}
 
-	.gallery_images li+li { margin-top: calc(var(--gap) / 2) }
+	.gallery_items li+li { margin-top: calc(var(--gap) / 2) }
+}
+
+@media (min-width: 100rem)
+{
+	.section_type_gallery .gallery_items { column-count: 3 }
 }
 
 @media (min-width: 120rem)
 {
-	.gallery_images { margin: 0 calc(2 * var(--gap)) }
+	.gallery_items { margin: 0 calc(2 * var(--gap)) }
 }
 
 /* Pages: Page hero */
@@ -618,7 +676,7 @@ section h2 {
 
 @media (min-width: 60rem)
 {
-	.page_hero { margin: 2em var(--gap) }
+	.page_hero { margin: 1em var(--gap) 2em }
 	.page_hero h1 { font-size: 3em }
 }
 
@@ -1617,4 +1675,13 @@ footer a:active {
 {
 	.contact form { margin: var(--gap) 0 0 calc(2 * var(--gap)) }
 	.contact_info { margin: var(--gap) calc(2 * var(--gap)) 0 0 }
+}
+
+/* Project gallery filters */
+
+#gallery_filter>input {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
 }
