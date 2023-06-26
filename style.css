@@ -817,15 +817,10 @@ section h2 {
 
 @media (min-width: 30rem)
 {
-	.section_type_gallery .gallery_items {
-	  -moz-column-count: 1;
-	  column-count: 1;
-	}
+	.section_type_gallery .gallery_items { column-count: 1 }
 
 	.gallery_items {
-	  -moz-column-count: 2;
 		column-count: 2;
-		-moz-column-gap: var(--gap);
 		column-gap: var(--gap);
 	}
 
@@ -834,8 +829,10 @@ section h2 {
 		.gallery_items {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-columns: masonry;
+			grid-template-rows: masonry;
+			align-tracks: start;
 			gap: var(--gap);
+			column-count: 1;
 		}
 	}
 }
@@ -847,10 +844,7 @@ section h2 {
 
 @media (min-width: 60rem)
 {
-	.section_type_gallery .gallery_items {
-	  -moz-column-count: 2;
-	  column-count: 2;
-	}
+	.section_type_gallery .gallery_items { column-count: 2 }
 }
 
 @media (min-width: 80rem)
@@ -871,10 +865,7 @@ section h2 {
 
 @media (min-width: 100rem)
 {
-	.section_type_gallery .gallery_items {
-	  -moz-column-count: 3;
-	  column-count: 3;
-	}
+	.section_type_gallery .gallery_items { column-count: 3 }
 }
 
 @media (min-width: 120rem)
