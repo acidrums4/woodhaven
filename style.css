@@ -1026,14 +1026,14 @@ section h2 {
 .top_image img {
 	max-width: 100%;
 	height: 100%;
-	height: 150vw;
+	height: 175vw;
 	object-fit: cover;
 	object-position: 50% 0%;
 }
 
 @media (min-width: 60rem)
 {
-	.top_image img { height: 120vw }
+	.top_image img { height: 150vw }
 }
 
 @media (min-width: 80rem)
