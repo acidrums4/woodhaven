@@ -6,7 +6,7 @@
 		<meta name="description" content="Project gallery: Woodhaven Custom Cabinets. Handcrafted Fine Cabinetry in Northwest Arkansas." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="fonts.css" />
+		<script defer src="galleryfilter.js"></script>
 	</head>
 	<body>
 
@@ -38,7 +38,7 @@
 				<li>
 					<a href="index.html">Home</a>
 				</li>
-				<li>
+				<li tabindex="0">
 					<a href="#">About</a>
 					<ul>
 						<li><a href="aboutus.html">About us</a></li>
@@ -46,7 +46,7 @@
 						<li><a href="leanmanufacturing.html">LEAN Manufacturing</a></li>
 					</ul>
 				</li>
-				<li>
+				<li tabindex="0">
 					<a href="#">Products</a>
 					<ul>
 						<li><a href="styles.html">Styles</a></li>
@@ -71,30 +71,67 @@
 
 		<!-- Page gallery -->
 		<section class="section_type_gallery">
-			<span>Filter by</span>
 			<nav id="gallery_filter">
-				<input type="checkbox" id="gallery_filter-all"/>
-				<input type="checkbox" id="gallery_filter-interior"/>
-				<input type="checkbox" id="gallery_filter-bathrooms"/>
-				<input type="checkbox" id="gallery_filter-kitchens"/>
-				<input type="checkbox" id="gallery_filter-premium"/>
-				<input type="checkbox" id="gallery_filter-builder"/>
-				<input type="checkbox" id="gallery_filter-lean"/>
+				<span>Filter by</span>
 				<ul id="gallery_filters">
 					<li>
-						<label for="gallery_filter-all">All</label>
+						<a href="#" data-filter="all">All</a>
 					</li>
 					<li>
 						<a href="#">Ambient</a>
 						<ul>
 							<li>
-								<label for="gallery_filter-interior">Interior</label>
+								<a href="#" data-filter="ambient-interior">Interior</a>
 							</li>
 							<li>
-								<label for="gallery_filter-bathrooms">Bathrooms</label>
+								<a href="#" data-filter="ambient-bathroom">Bathroom</a>
 							</li>
 							<li>
-								<label for="gallery_filter-kitchens">Kitchens</label>
+								<a href="#" data-filter="ambient-kitchen">Kitchen</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Material</a>
+						<ul>
+							<li>
+								<a href="#" data-filter="material-plywood">Plywood</a>
+							</li>
+							<li>
+								<a href="#" data-filter="material-hardwood">Hard wood</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Finish</a>
+						<ul>
+							<li>
+								<a href="#" data-filter="finish-matte">Matte</a>
+							</li>
+							<li>
+								<a href="#" data-filter="finish-lacquer">Lacquer</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Paint</a>
+						<ul>
+							<li>
+								<a href="#" data-filter="paint-nopaint">No paint</a>
+							</li>
+							<li>
+								<a href="#" data-filter="paint-paint">Paint</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Wood</a>
+						<ul>
+							<li>
+								<a href="#" data-filter="wood-oak">Oak</a>
+							</li>
+							<li>
+								<a href="#" data-filter="wood-walnut">Walnut</a>
 							</li>
 						</ul>
 					</li>
@@ -102,13 +139,13 @@
 						<a href="#">Line</a>
 						<ul>
 							<li>
-								<label for="gallery_filter-premium">Premium Custom</label>
+								<a href="#" data-filter="line-premium">Premium Custom</a>
 							</li>
 							<li>
-								<label for="gallery_filter-builder">Builder Custom</label>
+								<a href="#" data-filter="line-builder">Builder Custom</a>
 							</li>
 							<li>
-								<label for="gallery_filter-lean">LEAN Manufacturing</label>
+								<a href="#" data-filter="line-lean">LEAN Manufacturing</a>
 							</li>
 						</ul>
 					</li>
@@ -116,7 +153,7 @@
 			</nav>
 			<ul class="gallery_items">
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-premium ambient-kitchen material-plywood finish-matte paint-nopaint wood-oak">
 						<a class="card_mini_image" href="#">
 							<img src="img/4042558797.jpg" alt=""/>
 						</a>
@@ -128,7 +165,7 @@
 					</div>
 				</li>
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-builder ambient-bathroom material-hardwood finish-lacquer paint-paint wood-walnut">
 						<a href="#">
 							<img src="img/910738421.jpg" alt=""/>
 						</a>
@@ -140,9 +177,9 @@
 					</div>
 				</li>
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-lean ambient-interior material-plywood finish-matte paint-nopaint wood-oak">
 						<a href="#">
-							<img src="img/910738421.jpg" alt=""/>
+							<img src="img/1213718434.jpg" alt=""/>
 						</a>
 						<div class="card_mini_meta">
 							<span><a href="#">Door style 3</a></span>
@@ -152,9 +189,9 @@
 					</div>
 				</li>
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-premium ambient-bathroom material-hardwood finish-lacquer paint-paint wood-walnut">
 						<a href="#">
-							<img src="img/698602194.jpg" alt=""/>
+							<img src="img/910738421.jpg" alt=""/>
 						</a>
 						<div class="card_mini_meta">
 							<span><a href="#">Finish style 1</a></span>
@@ -164,7 +201,7 @@
 					</div>
 				</li>
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-builder ambient-bathroom material-plywood finish-matte paint-nopaint wood-oak">
 						<a href="#">
 							<img src="img/3418371479.jpg" alt=""/>
 						</a>
@@ -176,9 +213,9 @@
 					</div>
 				</li>
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-lean ambient-interior material-hardwood finish-lacquer paint-paint wood-walnut">
 						<a href="#">
-							<img src="img/3418371479.jpg" alt=""/>
+							<img src="img/2084854032.jpg" alt=""/>
 						</a>
 						<div class="card_mini_meta">
 							<span><a href="#">Finish style 3</a></span>
@@ -188,9 +225,9 @@
 					</div>
 				</li>
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-premium ambient-kitchen material-plywood finish-matte paint-nopaint wood-oak">
 						<a href="#">
-							<img src="img/698602194.jpg" alt=""/>
+							<img src="img/1060746049.jpg" alt=""/>
 						</a>
 						<div class="card_mini_meta">
 							<span><a href="#">Paint style 1</a></span>
@@ -200,7 +237,7 @@
 					</div>
 				</li>
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-builder ambient-bathroom material-hardwood finish-lacquer paint-paint wood-walnut">
 						<a href="#">
 							<img src="img/3418371479.jpg" alt=""/>
 						</a>
@@ -212,9 +249,9 @@
 					</div>
 				</li>
 				<li class="gallery_item">
-					<div class="card_mini">
+					<div class="card_mini" data-tags="line-lean ambient-interior material-plywood finish-matte paint-nopaint wood-oak">
 						<a href="#">
-							<img src="img/3418371479.jpg" alt=""/>
+							<img src="img/1213718434.jpg" alt=""/>
 						</a>
 						<div class="card_mini_meta">
 							<span><a href="#">Paint style 3</a></span>
